@@ -1,10 +1,17 @@
 # Global Ads Performance Analytics
 
-> **Which ad platform gives the best return on ad spend, and does that hold across industries, countries, campaign types, and months?**
+> **Executive Summary**
+> 
+This project evaluates marketing performance across **1800 paid ad campaigns** generated throughout 2024 across three major digital advertising platforms: **TikTok Ads**, **Meta Ads**, and **Google Ads**. 
 
-An end-to-end analysis of 1800 ad campaigns (2024) across Google Ads, Meta Ads, and TikTok Ads. The data was analyzed with SQL in MySQL and presented in two Tableau Public dashboards.
+The core objective was to determine paid media efficiency, identify channel-level performance discrepancies, and provide actionable, executive-ready budget allocation strategies.
 
 ## Key Findings
+
+- **TikTok leads ROAS in every industry (5/5), country (7/7), and campaign type (4/4)**, and in 11 of 12 months. Meta was ahead only in January (6,82x vs 6,61x). 
+TikTok also has the lowest CPA in every one of those segments and in all 12 months.
+- **Google Ads takes 57% of ad spend but brings in only 41% of revenue.** Its best month (4,17x) was still below Meta's worst month (4,57x).
+- **The USA is the weakest market for all three platforms**, which suggests the cause is the market and not any single platform (the data cannot confirm why).
 
 | Platform | Campaigns | Ad spend | Revenue | ROAS | CPA | Share of spend | Share of revenue |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -13,22 +20,17 @@ An end-to-end analysis of 1800 ad campaigns (2024) across Google Ads, Meta Ads, 
 | Google Ads | 720 | 6,35M | 22,03M | 3,47x | 48,43 | 57,2% | 40,7% |
 | **Total** | **1800** | **11,11M** | **54,18M** | **4,88x** | **33,99** | 100% | 100% |
 
-- **TikTok leads ROAS in every industry (5/5), country (7/7), and campaign type (4/4)**, and in 11 of 12 months. Meta was ahead only in January (6,82x vs 6,61x). 
-TikTok also has the lowest CPA in every one of those segments and in all 12 months.
-- **Google Ads takes 57% of ad spend but brings in only 41% of revenue.** Its best month (4,17x) was still below Meta's worst month (4,57x).
-- **The USA is the weakest market for all three platforms**, which suggests the cause is the market and not any single platform (the data cannot confirm why).
-
 ## Recommendation
 
 Shift budget gradually from Google Ads to TikTok and Meta, in tests of 5-10% per month, and track ROAS after each step. See the limitations below for why the shift should be gradual.
 
 ## Dashboards
 
-**Page 1 - Campaign Analytics (overview)**
+**Dashboard 1 - Campaign Analytics (overview)**
 
 ![Campaign Analytics dashboard](images/dashboard_1.png)
 
-**Page 2 - Trends & Segmentation**
+**Dashboard 2 - Trends & Segmentation**
 
 ![Trends and Segmentation dashboard](images/dashboard_2.png)
 
@@ -41,7 +43,7 @@ Tableau Public: [Ads Performance Analytics dashboard](https://public.tableau.com
  The data is not included in this repository; download it and place it in `data/`.
 - **Size:** 1800 rows, 14 columns, covering 2024-01-01 to 2024-12-30.
 - **Columns:** `date`, `platform`, `campaign_type`, `industry`, `country`, `impressions`, `clicks`, `ctr`, `cpc`, `ad_spend`, `conversions`, `cpa`, `revenue`, `roas`.
-- **Dimensions:** 3 platforms, 4 campaign types, 5 industries, 7 countries.
+- **Dimensions:** 3 platforms, 4 campaign types (Search, Video, Shopping, Display), 5 industries, 7 countries.
 - The dataset does not state a currency, so monetary values are shown without a currency symbol.
 
 ## Approach
@@ -88,5 +90,7 @@ MySQL (Workbench), SQL (aggregation, weighted ratios, date functions), Tableau P
 ## Author
 
 Sree Malathi Elancheralathan
+
 Data Analyst
+
 [LinkedIn](https://www.linkedin.com/in/sree-malathik)
